@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/resources/js' => resource_path('js'),
-        ], 'tasks-assets');
+        ], 'teams-assets');
 
         $this->publishes([
             __DIR__.'/resources/js' => resource_path('js'),
