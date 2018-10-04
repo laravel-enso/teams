@@ -7,7 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateTeamRequest extends FormRequest
 {
-
     public function authorize()
     {
         return true;
@@ -22,10 +21,10 @@ class ValidateTeamRequest extends FormRequest
             : $nameUnique;
 
         return [
-            'id'          => 'nullable|exists:teams,id',
-            'name'        => ['required', $nameUnique],
+            'id' => 'nullable|exists:teams,id',
+            'name' => ['required', $nameUnique],
             'description' => 'string|nullable',
-            'userIds'     => 'array',
+            'userIds' => 'array',
         ];
     }
 }
