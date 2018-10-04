@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Core\app\Http\Controllers\Administration\Team;
+namespace LaravelEnso\Teams\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use LaravelEnso\Teams\app\Models\Team;
