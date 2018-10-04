@@ -27,7 +27,8 @@ class Team extends Model
         $team = null;
 
         \DB::transaction(function () use (&$team, $attributes) {
-            $team = self::firstOrCreate(
+            $team = self::updateOrCreate(
+                ['id' => $attributes['id'] ?? null],
                 ['name' => $attributes['name']]
             );
 
