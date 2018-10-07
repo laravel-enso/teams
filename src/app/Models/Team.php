@@ -4,12 +4,12 @@ namespace LaravelEnso\Teams\app\Models;
 
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\ActivityLog\app\Traits\LogActivity;
+use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
 use LaravelEnso\Teams\app\Classes\TeamMemberChanges;
 
 class Team extends Model
 {
-    use LogActivity;
+    use LogsActivity;
 
     protected $fillable = ['name'];
 
