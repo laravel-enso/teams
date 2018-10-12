@@ -54,7 +54,7 @@ class TeamMemberChanges
     {
         return User::whereIn('id', $ids)
             ->get()
-            ->pluck('fullName')
+            ->pluck('name')
             ->implode(', ');
     }
 }

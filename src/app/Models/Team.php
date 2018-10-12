@@ -65,7 +65,7 @@ class Team extends Model
     {
         return $this->users->map(function ($user) {
             return [
-                'name' => $user->fullName,
+                'name' => $user->person->name,
                 'avatar' => $user->avatar,
             ];
         });
