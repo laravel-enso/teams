@@ -11,6 +11,7 @@ class CreateTeamUserPivotTable extends Migration
             $table->integer('team_id')->unsigned()->index();
             $table->foreign('team_id')->references('id')->on('teams')
                 ->onUpdate('cascade')->onDelete('cascade');
+
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
