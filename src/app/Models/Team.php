@@ -5,7 +5,7 @@ namespace LaravelEnso\Teams\app\Models;
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
-use LaravelEnso\Teams\app\Classes\TeamMemberChanges;
+use LaravelEnso\Teams\app\Classes\MemberChanges;
 
 class Team extends Model
 {
@@ -22,25 +22,13 @@ class Team extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public static function store($attributes)
+    public function syncMembers($userIds)
     {
-        $team = null;
+        $synced = $this->users()->sync($userIds);
 
-        \DB::transaction(function () use (&$team, $attributes) {
-            $team = self::updateOrCreate(
-                ['id' => $attributes['id'] ?? null],
-                ['name' => $attributes['name']]
-            );
-
-            $synced = $team->users()->sync($attributes['userIds']);
-
-            if (count($synced['attached']) && count($synced['detached'])) {
-                (new TeamMemberChanges($team, $synced))
-                    ->log();
-            }
-        });
-
-        return $team;
+        if (count($synced['attached']) || count($synced['detached'])) {
+            (new MemberChanges($this, $synced))->log();
+        }
     }
 
     public function delete()

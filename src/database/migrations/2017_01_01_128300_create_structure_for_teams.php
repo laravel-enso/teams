@@ -4,10 +4,6 @@ use LaravelEnso\StructureManager\app\Classes\StructureMigration;
 
 class CreateStructureForTeams extends StructureMigration
 {
-    protected $permissionGroup = [
-        'name' => 'administration.teams', 'description' => 'Teams permissions group',
-    ];
-
     protected $permissions = [
         ['name' => 'administration.teams.index', 'description' => 'Show teams', 'type' => 0, 'is_default' => false],
         ['name' => 'administration.teams.store', 'description' => 'Store newly created team', 'type' => 1, 'is_default' => false],
@@ -16,7 +12,7 @@ class CreateStructureForTeams extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Teams', 'icon' => 'users-cog', 'link' => 'administration.teams.index', 'order_index' => 300, 'has_children' => false,
+        'name' => 'Teams', 'icon' => 'users-cog', 'route' => 'administration.teams.index', 'order_index' => 300, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Administration';

@@ -5,7 +5,7 @@ namespace LaravelEnso\Teams\app\Classes;
 use LaravelEnso\Core\app\Models\User;
 use LaravelEnso\Teams\app\Models\Team;
 
-class TeamMemberChanges
+class MemberChanges
 {
     private $team;
     private $synced;

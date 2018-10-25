@@ -20,7 +20,12 @@ class TeamController extends Controller
 
     public function store(ValidateTeamRequest $request)
     {
-        $team = Team::store($request->validated());
+        $team = Team::updateOrCreate(
+            ['id' => $request->get('id')],
+            ['name' => $request->get('name')]
+        );
+
+        $team->syncMembers($request->get('userIds'));
 
         return [
             'message' => __('The team was successfully saved'),
