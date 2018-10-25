@@ -4,8 +4,8 @@ namespace LaravelEnso\Teams\app\Models;
 
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
 use LaravelEnso\Teams\app\Classes\MemberChanges;
+use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
 
 class Team extends Model
 {
