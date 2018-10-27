@@ -5,7 +5,6 @@ namespace LaravelEnso\Teams\app\Models;
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
-use LaravelEnso\Teams\app\Classes\MemberChanges;
 
 class Team extends Model
 {
@@ -27,7 +26,7 @@ class Team extends Model
         $synced = $this->users()->sync($userIds);
 
         if (count($synced['attached']) || count($synced['detached'])) {
-            (new MemberChanges($this, $synced))->log();
+            $this->logEvent('updated the members', 'users');
         }
     }
 
