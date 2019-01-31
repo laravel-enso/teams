@@ -5,10 +5,11 @@ namespace LaravelEnso\Teams\app\Models;
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
+use LaravelEnso\Multitenancy\app\Traits\SystemConnection;
 
 class Team extends Model
 {
-    use LogsActivity;
+    use LogsActivity, SystemConnection;
 
     protected $fillable = ['name'];
 
