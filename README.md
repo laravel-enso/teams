@@ -22,7 +22,7 @@ Team management dependency for [Laravel Enso](https://github.com/laravel-enso/En
 
 ### Configuration & Usage
 
-Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/packages/teams.html)
+Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/backend/teams.html)
 
 ### Contributions
 
