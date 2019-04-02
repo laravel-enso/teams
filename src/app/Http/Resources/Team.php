@@ -11,8 +11,8 @@ class Team extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'userIds' => $this->whenLoaded('users', $this->userIds()),
-            'users' => $this->whenLoaded('users', $this->userList()),
+            'userIds' => $this->userIds(),
+            'users' => $this->userList(),
             'edit' => false,
         ];
     }
