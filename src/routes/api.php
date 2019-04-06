@@ -11,5 +11,6 @@ Route::namespace('LaravelEnso\Teams\app\Http\Controllers')
                     ->name('options');
             });
 
-        Route::resource('teams', 'TeamController', ['only' => ['index', 'store', 'destroy']]);
+        Route::resource('teams', 'TeamController')
+            ->only('index', 'store', 'destroy');
     });
