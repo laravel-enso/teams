@@ -14,17 +14,20 @@ class ValidateTeamRequest extends FormRequest
 
     public function rules()
     {
-        $nameUnique = Rule::unique('teams', 'name');
-
-        $nameUnique = $this->has('id')
-            ? $nameUnique->ignore($this->get('id'))
-            : $nameUnique;
-
         return [
             'id' => 'nullable|exists:teams,id',
-            'name' => ['required', $nameUnique],
+            'name' => ['required', $this->nameUnique()],
             'description' => 'string|nullable',
             'userIds' => 'array',
         ];
+    }
+
+    protected function nameUnique()
+    {
+        $rule = Rule::unique('teams', 'name');
+
+        return $this->has('id')
+            ? $rule->ignore($this->get('id'))
+            : $rule;
     }
 }

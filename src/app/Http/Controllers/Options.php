@@ -6,7 +6,7 @@ use Illuminate\Routing\Controller;
 use LaravelEnso\Teams\app\Models\Team;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
-class TeamSelectController extends Controller
+class Options extends Controller
 {
     use OptionsBuilder;
 

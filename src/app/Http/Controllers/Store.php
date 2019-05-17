@@ -7,18 +7,9 @@ use LaravelEnso\Teams\app\Models\Team;
 use LaravelEnso\Teams\app\Http\Resources\Team as Resource;
 use LaravelEnso\Teams\app\Http\Requests\ValidateTeamRequest;
 
-class TeamController extends Controller
+class Store extends Controller
 {
-    public function index()
-    {
-        return Resource::collection(
-            Team::with('users')
-                ->latest()
-                ->get()
-        );
-    }
-
-    public function store(ValidateTeamRequest $request)
+    public function __invoke(ValidateTeamRequest $request)
     {
         $team = Team::updateOrCreate(
             ['id' => $request->get('id')],
@@ -30,15 +21,6 @@ class TeamController extends Controller
         return [
             'message' => __('The team was successfully saved'),
             'team' => new Resource($team),
-        ];
-    }
-
-    public function destroy(Team $team)
-    {
-        $team->delete();
-
-        return [
-            'message' => __('The team was successfully deleted'),
         ];
     }
 }

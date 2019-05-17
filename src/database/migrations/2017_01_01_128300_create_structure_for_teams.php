@@ -1,8 +1,8 @@
 <?php
 
-use LaravelEnso\StructureManager\app\Classes\StructureMigration;
+use LaravelEnso\Migrator\app\Database\Migration;
 
-class CreateStructureForTeams extends StructureMigration
+class CreateStructureForTeams extends Migration
 {
     protected $permissions = [
         ['name' => 'administration.teams.index', 'description' => 'Show teams', 'type' => 0, 'is_default' => false],

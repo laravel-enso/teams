@@ -2,15 +2,11 @@
 
 Route::namespace('LaravelEnso\Teams\app\Http\Controllers')
     ->middleware(['web', 'auth', 'core'])
-    ->prefix('api/administration')
-    ->as('administration.')
+    ->prefix('api/administration/teams')
+    ->as('administration.teams.')
     ->group(function () {
-        Route::prefix('team')->as('team.')
-            ->group(function () {
-                Route::get('options', 'TeamSelectController@options')
-                    ->name('options');
-            });
-
-        Route::resource('teams', 'TeamController')
-            ->only('index', 'store', 'destroy');
+        Route::get('', 'Index')->name('index');
+        Route::post('', 'Store')->name('store');
+        Route::delete('{team}', 'Destroy')->name('destroy');
+        Route::get('options', 'Options')->name('options');
     });
