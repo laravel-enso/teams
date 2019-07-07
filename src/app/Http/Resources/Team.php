@@ -3,6 +3,7 @@
 namespace LaravelEnso\Teams\app\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use LaravelEnso\TrackWho\app\Http\Resources\TrackWho;
 
 class Team extends JsonResource
 {
@@ -12,7 +13,7 @@ class Team extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'userIds' => $this->userIds(),
-            'users' => $this->userList(),
+            'users' => TrackWho::collection($this->whenLoaded('users')),
             'edit' => false,
         ];
     }
