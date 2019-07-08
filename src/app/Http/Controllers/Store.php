@@ -20,7 +20,7 @@ class Store extends Controller
 
         return [
             'message' => __('The team was successfully saved'),
-            'team' => new Resource($team),
+            'team' => new Resource($team->load(['users.person', 'users.avatar'])),
         ];
     }
 }
