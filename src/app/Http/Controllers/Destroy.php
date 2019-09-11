@@ -11,8 +11,6 @@ class Destroy extends Controller
     {
         $team->delete();
 
-        return [
-            'message' => __('The team was successfully deleted'),
-        ];
+        return ['message' => __('The team was successfully deleted')];
     }
 }

@@ -11,9 +11,7 @@ class Index extends Controller
     public function __invoke()
     {
         return Resource::collection(
-            Team::with(['users.person', 'users.avatar'])
-                ->latest()
-                ->get()
+            Team::with(['users.person', 'users.avatar'])->latest()->get()
         );
     }
 }

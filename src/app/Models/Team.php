@@ -4,11 +4,12 @@ namespace LaravelEnso\Teams\app\Models;
 
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
+use LaravelEnso\Rememberable\app\Traits\Rememberable;
+use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Team extends Model
 {
-    use LogsActivity;
+    use AvoidsDeletionConflicts, Rememberable;
 
     protected $fillable = ['name'];
 
