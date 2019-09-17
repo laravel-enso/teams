@@ -22,15 +22,6 @@ class Team extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function syncMembers($userIds)
-    {
-        $synced = $this->users()->sync($userIds);
-
-        if (count($synced['attached']) || count($synced['detached'])) {
-            $this->logEvent('updated the members', 'users');
-        }
-    }
-
     public function delete()
     {
         try {
