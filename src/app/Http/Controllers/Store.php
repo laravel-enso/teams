@@ -16,7 +16,7 @@ class Store extends Controller
             ['name' => $request->get('name')]
         );
 
-        $team->users()->sync($request->get('userIds'));
+        $team->updateMembers($request->get('userIds'));
 
         return [
             'message' => __('The team was successfully saved'),

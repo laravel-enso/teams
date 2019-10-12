@@ -49,4 +49,13 @@ class Team extends Model
             ];
         });
     }
+
+    public function updateMembers(array $memberIds)
+    {
+        $synced = $this->users()->sync($memberIds);
+
+        if (! empty($synced['attached']) || ! empty($synced['detached'])) {
+            $this->fireModelEvent('updated-members', false);
+        }
+    }
 }
