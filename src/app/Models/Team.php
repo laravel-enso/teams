@@ -4,12 +4,13 @@ namespace LaravelEnso\Teams\app\Models;
 
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\DynamicMethods\app\Traits\Relations;
 use LaravelEnso\Rememberable\app\Traits\Rememberable;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Team extends Model
 {
-    use AvoidsDeletionConflicts, Rememberable;
+    use AvoidsDeletionConflicts, Rememberable, Relations;
 
     protected $fillable = ['name'];
 
@@ -20,19 +21,6 @@ class Team extends Model
     public function users()
     {
         return $this->belongsToMany(User::class);
-    }
-
-    public function delete()
-    {
-        try {
-            parent::delete();
-        } catch (\Exception $e) {
-            throw new ConflictHttpException(__(
-                'The team has activity in the system and cannot be deleted'
-            ));
-        }
-
-        return ['message' => 'The team was successfully deleted'];
     }
 
     public function userIds()
@@ -53,7 +41,6 @@ class Team extends Model
     public function updateMembers(array $memberIds)
     {
         $synced = $this->users()->sync($memberIds);
-
         if (! empty($synced['attached']) || ! empty($synced['detached'])) {
             $this->fireModelEvent('updated-members', false);
         }
