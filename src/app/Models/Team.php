@@ -13,10 +13,6 @@ class Team extends Model
 
     protected $fillable = ['name'];
 
-    protected $loggableLabel = 'name';
-
-    protected $loggable = ['name'];
-
     public function users()
     {
         return $this->belongsToMany(User::class);
