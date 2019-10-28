@@ -18,15 +18,7 @@ For live examples and demos, you may visit [laravel-enso.com](https://www.larave
 
 <sup>click on the photo to view a short demo in compatible browsers</sup>
 
-### Features
-
-* simple structure to group users under a team
-* the current team structure is basic, and can be further customized as needed
-* search through teams as required
-* the Team model has its activity tracked (integration with [ActivityLog](https://github.com/laravel-enso/ActivityLog))
-* provides a `Teams` trait that defines the `teams` relationship
-
-### Configuration & Usage
+### Installation, Configuration & Usage
 
 Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/backend/teams.html)
 
