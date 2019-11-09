@@ -2,10 +2,10 @@
 
 namespace LaravelEnso\Teams\app\Models;
 
-use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Rememberable\app\Traits\Rememberable;
+use LaravelEnso\Core\app\Models\User;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Rememberable\app\Traits\Rememberable;
 
 class Team extends Model
 {

@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Teams;
 
-use LaravelEnso\Teams\app\Models\Team;
 use LaravelEnso\Searchable\SearchServiceProvider as ServiceProvider;
+use LaravelEnso\Teams\app\Models\Team;
 
 class SearchServiceProvider extends ServiceProvider
 {
