@@ -22,7 +22,7 @@ class Team extends Model
     {
         try {
             parent::delete();
-        } catch (\Exception $e) {
+        } catch (\Exception $exception) {
             throw new ConflictHttpException(__(
                 'The team has activity in the system and cannot be deleted'
             ));
