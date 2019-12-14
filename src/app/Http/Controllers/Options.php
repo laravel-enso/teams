@@ -3,8 +3,8 @@
 namespace LaravelEnso\Teams\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Teams\app\Models\Team;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
+use LaravelEnso\Teams\app\Models\Team;
 
 class Options extends Controller
 {
