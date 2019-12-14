@@ -2,15 +2,15 @@
 
 namespace LaravelEnso\Teams\app\Models;
 
-use LaravelEnso\Core\app\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Core\app\Models\User;
 use LaravelEnso\DynamicMethods\app\Traits\Relations;
-use LaravelEnso\Rememberable\app\Traits\Rememberable;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Rememberable\app\Traits\Rememberable;
 
 class Team extends Model
 {
-    use AvoidsDeletionConflicts, Rememberable, Relations;
+    use AvoidsDeletionConflicts, Relations, Rememberable;
 
     protected $fillable = ['name'];
 
