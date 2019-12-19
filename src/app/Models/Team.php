@@ -26,12 +26,10 @@ class Team extends Model
 
     public function userList()
     {
-        return $this->users->map(function ($user) {
-            return [
-                'name' => $user->person->name,
-                'avatar' => $user->avatar,
-            ];
-        });
+        return $this->users->map(fn($user) => [
+            'name' => $user->person->name,
+            'avatar' => $user->avatar,
+        ]);
     }
 
     public function updateMembers(array $memberIds)
