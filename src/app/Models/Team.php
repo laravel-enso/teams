@@ -44,7 +44,7 @@ class Team extends Model
     public function delete()
     {
         if ($this->users()->exists()) {
-            throw Exception::delete();
+            throw Exception::users();
         }
 
         return parent::delete();
