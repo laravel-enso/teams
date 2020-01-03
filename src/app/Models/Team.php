@@ -40,6 +40,7 @@ class Team extends Model
             $this->fireModelEvent('updated-members', false);
         }
     }
+
     public function delete()
     {
         if ($this->users()->exists()) {
