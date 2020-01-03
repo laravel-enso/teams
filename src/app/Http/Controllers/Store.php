@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\Teams\app\Http\Controllers;
+namespace LaravelEnso\Teams\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Teams\app\Http\Requests\ValidateTeamRequest;
-use LaravelEnso\Teams\app\Http\Resources\Team as Resource;
-use LaravelEnso\Teams\app\Models\Team;
+use LaravelEnso\Teams\App\Http\Requests\ValidateTeamRequest;
+use LaravelEnso\Teams\App\Http\Resources\Team as Resource;
+use LaravelEnso\Teams\App\Models\Team;
 
 class Store extends Controller
 {

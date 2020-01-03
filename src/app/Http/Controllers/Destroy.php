@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Teams\app\Http\Controllers;
+namespace LaravelEnso\Teams\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Teams\app\Models\Team;
+use LaravelEnso\Teams\App\Models\Team;
 
 class Destroy extends Controller
 {

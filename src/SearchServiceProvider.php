@@ -3,11 +3,11 @@
 namespace LaravelEnso\Teams;
 
 use LaravelEnso\Searchable\SearchServiceProvider as ServiceProvider;
-use LaravelEnso\Teams\app\Models\Team;
+use LaravelEnso\Teams\App\Models\Team;
 
 class SearchServiceProvider extends ServiceProvider
 {
-    public $register = [
+    public array $register = [
         Team::class => [
             'group' => 'Team',
             'attributes' => ['name'],

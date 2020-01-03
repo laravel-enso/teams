@@ -1,14 +1,15 @@
 <?php
 
-use LaravelEnso\Migrator\app\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Permissions\app\Enums\Types;
 
 class CreateStructureForTeams extends Migration
 {
     protected $permissions = [
-        ['name' => 'administration.teams.index', 'description' => 'Show teams', 'type' => 0, 'is_default' => false],
-        ['name' => 'administration.teams.store', 'description' => 'Store newly created team', 'type' => 1, 'is_default' => false],
-        ['name' => 'administration.teams.destroy', 'description' => 'Delete team', 'type' => 1, 'is_default' => false],
-        ['name' => 'administration.teams.options', 'description' => 'Get options for select', 'type' => 0, 'is_default' => false],
+        ['name' => 'administration.teams.index', 'description' => 'Show teams', 'type' => Types::Read, 'is_default' => false],
+        ['name' => 'administration.teams.store', 'description' => 'Store newly created team', 'type' => Types::Write, 'is_default' => false],
+        ['name' => 'administration.teams.destroy', 'description' => 'Delete team', 'type' => Types::Write, 'is_default' => false],
+        ['name' => 'administration.teams.options', 'description' => 'Get options for select', 'type' => Types::Read, 'is_default' => false],
     ];
 
     protected $menu = [

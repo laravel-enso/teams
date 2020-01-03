@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Teams\app\Traits;
+namespace LaravelEnso\Teams\App\Traits;
 
-use LaravelEnso\Teams\app\Models\Team;
+use LaravelEnso\Teams\App\Models\Team;
 
 trait Teams
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Teams\app\Http\Controllers;
+namespace LaravelEnso\Teams\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\app\Traits\OptionsBuilder;
-use LaravelEnso\Teams\app\Models\Team;
+use LaravelEnso\Select\App\Traits\OptionsBuilder;
+use LaravelEnso\Teams\App\Models\Team;
 
 class Options extends Controller
 {

@@ -1,12 +1,13 @@
 <?php
 
-namespace LaravelEnso\Teams\app\Models;
+namespace LaravelEnso\Teams\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Core\app\Models\User;
-use LaravelEnso\DynamicMethods\app\Traits\Relations;
-use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Rememberable\app\Traits\Rememberable;
+use LaravelEnso\Core\App\Models\User;
+use LaravelEnso\DynamicMethods\App\Traits\Relations;
+use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Rememberable\App\Traits\Rememberable;
+use LaravelEnso\Teams\App\Exceptions\Team as Exception;
 
 class Team extends Model
 {
@@ -26,12 +27,10 @@ class Team extends Model
 
     public function userList()
     {
-        return $this->users->map(function ($user) {
-            return [
-                'name' => $user->person->name,
-                'avatar' => $user->avatar,
-            ];
-        });
+        return $this->users->map(fn ($user) => [
+            'name' => $user->person->name,
+            'avatar' => $user->avatar,
+        ]);
     }
 
     public function updateMembers(array $memberIds)
@@ -40,5 +39,14 @@ class Team extends Model
         if (! empty($synced['attached']) || ! empty($synced['detached'])) {
             $this->fireModelEvent('updated-members', false);
         }
+    }
+
+    public function delete()
+    {
+        if ($this->users()->exists()) {
+            throw Exception::users();
+        }
+
+        return parent::delete();
     }
 }
