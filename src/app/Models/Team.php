@@ -7,6 +7,7 @@ use LaravelEnso\Core\App\Models\User;
 use LaravelEnso\DynamicMethods\App\Traits\Relations;
 use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Rememberable\App\Traits\Rememberable;
+use LaravelEnso\Teams\App\Exceptions\Team as Exception;
 
 class Team extends Model
 {
@@ -38,5 +39,13 @@ class Team extends Model
         if (! empty($synced['attached']) || ! empty($synced['detached'])) {
             $this->fireModelEvent('updated-members', false);
         }
+    }
+    public function delete()
+    {
+        if ($this->users()->exists()) {
+            throw Exception::delete();
+        }
+
+        return parent::delete();
     }
 }
