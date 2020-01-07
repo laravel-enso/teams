@@ -7,7 +7,7 @@ use LaravelEnso\Teams\App\Models\Team;
 
 class SearchServiceProvider extends ServiceProvider
 {
-    public array $register = [
+    public $register = [
         Team::class => [
             'group' => 'Team',
             'attributes' => ['name'],
