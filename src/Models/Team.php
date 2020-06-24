@@ -1,18 +1,18 @@
 <?php
 
-namespace LaravelEnso\Teams\App\Models;
+namespace LaravelEnso\Teams\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Core\App\Models\User;
-use LaravelEnso\DynamicMethods\App\Traits\Relations;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Teams\App\Exceptions\Team as Exception;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\DynamicMethods\Traits\Relations;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Teams\Exceptions\Team as Exception;
 
 class Team extends Model
 {
     use Relations, Rememberable;
 
-    protected $fillable = ['name'];
+    protected $guarded = ['id'];
 
     public function users()
     {

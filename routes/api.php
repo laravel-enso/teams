@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::namespace('LaravelEnso\Teams\App\Http\Controllers')
-    ->middleware(['web', 'auth', 'core'])
+Route::namespace('LaravelEnso\Teams\Http\Controllers')
+    ->middleware(['api', 'auth', 'core'])
     ->prefix('api/administration/teams')
     ->as('administration.teams.')
     ->group(function () {

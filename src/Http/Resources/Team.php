@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Teams\App\Http\Resources;
+namespace LaravelEnso\Teams\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use LaravelEnso\Core\App\Http\Resources\User;
+use LaravelEnso\Core\Http\Resources\User;
 
 class Team extends JsonResource
 {

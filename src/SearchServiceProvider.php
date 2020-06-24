@@ -3,7 +3,7 @@
 namespace LaravelEnso\Teams;
 
 use LaravelEnso\Searchable\SearchServiceProvider as ServiceProvider;
-use LaravelEnso\Teams\App\Models\Team;
+use LaravelEnso\Teams\Models\Team;
 
 class SearchServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Teams\App\Exceptions;
+namespace LaravelEnso\Teams\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
