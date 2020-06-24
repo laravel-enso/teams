@@ -15,5 +15,5 @@ class CreateStructureForTeams extends Migration
         'name' => 'Teams', 'icon' => 'users-cog', 'route' => 'administration.teams.index', 'order_index' => 300, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'Administration';
+    protected string $parentMenu = 'Administration';
 }
