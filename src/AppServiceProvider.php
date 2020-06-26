@@ -3,7 +3,7 @@
 namespace LaravelEnso\Teams;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Avatar\DynamicsRelations\Teams;
+use LaravelEnso\Teams\DynamicsRelations\Teams;
 use LaravelEnso\Core\Models\User;
 use LaravelEnso\DynamicMethods\Services\Methods;
 
