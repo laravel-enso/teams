@@ -3,9 +3,9 @@
 namespace LaravelEnso\Teams;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Teams\DynamicsRelations\Teams;
 use LaravelEnso\Core\Models\User;
 use LaravelEnso\DynamicMethods\Services\Methods;
+use LaravelEnso\Teams\DynamicsRelations\Teams;
 
 class AppServiceProvider extends ServiceProvider
 {
