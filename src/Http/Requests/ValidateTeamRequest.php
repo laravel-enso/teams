@@ -24,10 +24,6 @@ class ValidateTeamRequest extends FormRequest
 
     protected function nameUnique()
     {
-        $rule = Rule::unique('teams', 'name');
-
-        return $this->has('id')
-            ? $rule->ignore($this->get('id'))
-            : $rule;
+        return Rule::unique('teams', 'name')->ignore($this->get('id'));
     }
 }

@@ -3,10 +3,10 @@
 namespace LaravelEnso\Teams\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Core\Models\User;
 use LaravelEnso\DynamicMethods\Traits\Relations;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Teams\Exceptions\Team as Exception;
+use LaravelEnso\Users\Models\User;
 
 class Team extends Model
 {
@@ -35,6 +35,7 @@ class Team extends Model
     public function updateMembers(array $memberIds)
     {
         $synced = $this->users()->sync($memberIds);
+
         if (! empty($synced['attached']) || ! empty($synced['detached'])) {
             $this->fireModelEvent('updated-members', false);
         }
