@@ -3,13 +3,13 @@
 namespace LaravelEnso\Teams\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Teams\Http\Requests\ValidateTeamRequest;
+use LaravelEnso\Teams\Http\Requests\ValidateTeam;
 use LaravelEnso\Teams\Http\Resources\Team as Resource;
 use LaravelEnso\Teams\Models\Team;
 
 class Store extends Controller
 {
-    public function __invoke(ValidateTeamRequest $request)
+    public function __invoke(ValidateTeam $request)
     {
         $team = Team::updateOrCreate(
             ['id' => $request->get('id')],

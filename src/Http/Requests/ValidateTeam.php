@@ -5,7 +5,7 @@ namespace LaravelEnso\Teams\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ValidateTeamRequest extends FormRequest
+class ValidateTeam extends FormRequest
 {
     public function authorize()
     {
