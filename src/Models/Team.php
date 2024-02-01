@@ -3,14 +3,13 @@
 namespace LaravelEnso\Teams\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\DynamicMethods\Traits\Relations;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Teams\Exceptions\Team as Exception;
 use LaravelEnso\Users\Models\User;
 
 class Team extends Model
 {
-    use Relations, Rememberable;
+    use Rememberable;
 
     protected $guarded = ['id'];
 
