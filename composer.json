@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "laravel-enso/core": "^9.0",
+        "laravel-enso/core": "^10.0",
         "laravel-enso/dynamic-methods": "^3.0",
         "laravel-enso/migrator": "^2.0",
         "laravel-enso/rememberable": "^3.0",
