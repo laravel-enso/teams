@@ -1,6 +1,6 @@
 {
     "name": "laravel-enso/teams",
-    "description": "Team management dependency for Laravel Enso",
+    "description": "Team management backend for Laravel Enso",
     "keywords": [
         "laravel-enso",
         "teams",
