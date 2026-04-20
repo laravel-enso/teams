@@ -26,7 +26,7 @@ class Team extends Model
     public function userList()
     {
         return $this->users->map(fn ($user) => [
-            'name' => $user->person->name,
+            'name'   => $user->person->name,
             'avatar' => $user->avatar,
         ]);
     }
@@ -35,7 +35,7 @@ class Team extends Model
     {
         $synced = $this->users()->sync($memberIds);
 
-        if (! empty($synced['attached']) || ! empty($synced['detached'])) {
+        if (!empty($synced['attached']) || !empty($synced['detached'])) {
             $this->fireModelEvent('updated-members', false);
         }
     }

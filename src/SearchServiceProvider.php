@@ -9,9 +9,9 @@ class SearchServiceProvider extends ServiceProvider
 {
     public $register = [
         Team::class => [
-            'group' => 'Team',
-            'attributes' => ['name'],
-            'label' => 'name',
+            'group'           => 'Team',
+            'attributes'      => ['name'],
+            'label'           => 'name',
             'permissionGroup' => 'administration.teams',
         ],
     ];

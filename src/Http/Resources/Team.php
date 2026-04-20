@@ -10,11 +10,11 @@ class Team extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
+            'id'      => $this->id,
+            'name'    => $this->name,
             'userIds' => $this->userIds(),
-            'users' => User::collection($this->whenLoaded('users')),
-            'edit' => false,
+            'users'   => User::collection($this->whenLoaded('users')),
+            'edit'    => false,
         ];
     }
 }

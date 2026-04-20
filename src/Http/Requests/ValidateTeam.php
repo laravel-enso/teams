@@ -15,10 +15,10 @@ class ValidateTeam extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'nullable|exists:teams,id',
-            'name' => ['required', $this->nameUnique()],
+            'id'          => 'nullable|exists:teams,id',
+            'name'        => ['required', $this->nameUnique()],
             'description' => 'string|nullable',
-            'userIds' => 'array',
+            'userIds'     => 'array',
         ];
     }
 
