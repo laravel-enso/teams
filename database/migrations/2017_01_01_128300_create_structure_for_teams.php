@@ -12,7 +12,7 @@ class CreateStructureForTeams extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Teams', 'icon' => 'users-cog', 'route' => 'administration.teams.index', 'order_index' => 300, 'has_children' => false,
+        'name' => 'Teams', 'icon' => 'users-gear', 'route' => 'administration.teams.index', 'order_index' => 300, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Administration';
