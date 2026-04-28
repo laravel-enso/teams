@@ -18,11 +18,11 @@
         }
     ],
     "require": {
-        "laravel-enso/core": "^11.0",
-        "laravel-enso/dynamic-methods": "^3.0",
+        "laravel-enso/core": "^12.0",
+        "laravel-enso/dynamic-methods": "^4.0",
         "laravel-enso/migrator": "^2.0",
-        "laravel-enso/rememberable": "^3.0",
-        "laravel-enso/select": "^4.0"
+        "laravel-enso/rememberable": "^4.0",
+        "laravel-enso/select": "^5.0"
     },
     "autoload": {
         "psr-4": {
