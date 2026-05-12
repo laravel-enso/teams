@@ -20,7 +20,9 @@ class TeamsMenuIcon implements MigratesData
     private function query()
     {
         return DB::table('menus')
-            ->where('route', 'administration.teams.index')
+            ->whereIn('permission_id', DB::table('permissions')
+                ->select('id')
+                ->where('name', 'administration.teams.index'))
             ->where('icon', 'users-cog');
     }
 }
